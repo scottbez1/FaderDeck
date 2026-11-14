@@ -28,10 +28,10 @@ chained block. Adding a fader is one more board.
 
 What you'll need besides the printed parts and the hardware listed on the site:
 
-- **FaderBuddy boards**: available [pre-assembled from Bezek Labs](https://bezeklabs.etsy.com/listing/4506790932) in the US, with
-  the firmware flashed and every board tested (buying there directly supports the project), or build your own from the
-  [FaderBuddy design files](https://github.com/scottbez1/FaderBuddy).
-- **60 mm motorized faders**: Behringer MF60T, sold in 5-packs as replacement parts from music retailers like
+- **FaderBuddy boards and faders**: available [pre-assembled from Bezek Labs](https://bezeklabs.etsy.com/listing/4506790932) in the
+  US, with the firmware flashed and every board tested, and with 60 mm motorized faders as an add-on (buying there directly
+  supports the project). Or build your own boards from the [FaderBuddy design files](https://github.com/scottbez1/FaderBuddy).
+- **60 mm motorized faders, elsewhere**: Behringer MF60T, sold in 5-packs as replacement parts from music retailers like
   [Sweetwater](https://www.sweetwater.com/store/detail/MOTORFADER--behringer-mf60t-motorized-faders-set-of-5-for-motor-controllers)
   or [Amazon](https://www.amazon.com/Behringer-MOTOR-High-Performance-Faders-Keyboards/dp/B01DT827IC).
 - **Touch-sensing fader caps** (optional): [conductive fader caps from Bezek Labs](https://bezeklabs.etsy.com/listing/4501804398)
