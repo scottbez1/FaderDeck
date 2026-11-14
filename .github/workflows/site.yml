@@ -1,0 +1,93 @@
+# Build every variant from the simulator, check them, and publish the site (the simulator page with every variant's STLs and
+# zips) to GitHub Pages. Every push builds and checks; only main publishes.
+name: Build and publish the site
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MANIFOLD_SHA: 96262c8ad0f56233e42e606bf5b9ef3ea04a224a   # the manifold the committed STLs were built with
+  THREE_VERSION: 0.147.0
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache manifold
+        id: manifold
+        uses: actions/cache@v4
+        with:
+          path: ext/manifold
+          key: manifold-${{ runner.os }}-${{ env.MANIFOLD_SHA }}
+
+      - name: Build manifold
+        if: steps.manifold.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update && sudo apt-get install -y ninja-build
+          git init ext/manifold && cd ext/manifold
+          git remote add origin https://github.com/elalish/manifold
+          git fetch --depth 1 origin "$MANIFOLD_SHA" && git checkout FETCH_HEAD
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DMANIFOLD_TEST=OFF -DMANIFOLD_PAR=OFF
+          ninja -C build
+
+      - name: three.js (for the headless page)
+        run: npm install --no-save --prefix ext/three-npm "three@$THREE_VERSION"
+
+      - name: Playwright and Chromium
+        run: |
+          pip install playwright numpy
+          python -m playwright install --with-deps chromium
+
+      - name: Build the tools
+        run: ./build.sh
+
+      - name: Build, check and export every variant
+        env:
+          THREE_DIR: ext/three-npm/node_modules/three
+        run: |
+          mkdir -p out
+          ./run.sh
+          python3 tools/gate.py | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Compare with the committed STLs
+        run: |
+          changed=$(git status --porcelain -- 'stl/*.stl' | wc -l)
+          echo "STLs that differ from the commit: $changed" | tee -a "$GITHUB_STEP_SUMMARY"
+          git status --porcelain -- 'stl/*.stl' | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$changed" -ne 0 ]; then echo "::warning::$changed STLs differ from the committed ones (commit a fresh ./run.sh)"; fi
+
+      - name: Assemble the site
+        run: tools/site.sh
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

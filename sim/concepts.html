@@ -1,0 +1,182 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Deck ID concepts</title>
+<style>
+  body{margin:0;background:#e9eaec;font:14px/1.35 "Helvetica Neue",Arial,sans-serif;color:#1c1f23}
+  #sheet{display:grid;grid-template-columns:220px repeat(3,560px);gap:6px 6px;padding:14px}
+  .lab{padding:10px 8px 0 4px}
+  .lab b{display:block;font-size:20px;margin-bottom:4px}
+  .lab span{color:#555b63;font-size:13px}
+  img{display:block;width:560px;height:360px;border-radius:4px}
+  .hd{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6a7078;padding:4px 2px}
+</style>
+<div id="sheet"></div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script>
+"use strict";
+// ---- shared dimensions (deck frame: plate top y=0, +z toward user) ----
+const PITCH = 17.85, INCL = 12.6 * Math.PI / 180, DANG = 45 * Math.PI / 180, B = DANG - INCL;
+const AA_W = 139, AA_H = 47.74, W = 184, Z_FRONT = 56, Z_REAR = -70;
+const C = -43.5, LIP = 11, T = 13.6, DS = LIP + 57.24 + 6, WINCZ = LIP + 28.62;   // slab: crease, lip, thickness (no bracket), length
+const BODY_Y = -7.55, GROUND = 0;
+
+const VARIANTS = [
+  { id: "0", name: "Current", desc: "Straight walls all round. Reference.",
+    ins: { s: 0, f: 0, r: 0 }, prof: (I, D) => [[0, 0, 0], [0, D, 0]] },
+  { id: "A", name: "Skirt + chamfer", desc: "4 mm crisp skirt, then a flat 35–45° chamfer tucking under. Reads as a thin plate on a shadow.",
+    ins: { s: 14, f: 9, r: 26 }, prof: (I, D) => [[0, 0, 0], [0, 4, 0], [I, D, 0]] },
+  { id: "B", name: "Pebble roll", desc: "Edges roll under on a full radius, meeting the desk tangentially. Soft, appliance-like.",
+    ins: { s: 18, f: 10, r: 30 }, prof: (I, D) => { const p = []; for (let k = 0; k <= 12; k++) { const a = k / 12 * Math.PI / 2; p.push([I * (1 - Math.cos(a)), D * Math.sin(a), 0]); } return p; } },
+  { id: "C", name: "Floating plinth", desc: "Tight-edged shell sits on a recessed black plinth: a shadow gap makes the body hover.",
+    ins: { s: 10, f: 8, r: 16 }, prof: (I, D) => { const h = Math.min(D * .55, Math.max(6, D - 7)); return [[0, 0, 0], [0, h, 0], [I, h, 1], [I, D, 1]]; } },
+  { id: "D", name: "Cove undercut", desc: "Knife-thin 2 mm top edge over a concave cove. Strongest shadow line, most 'lifted'.",
+    ins: { s: 12, f: 3, r: 14 }, prof: (I, D) => { const p = [[0, 0, 0], [0, 2, 0]]; for (let k = 1; k <= 12; k++) { const a = k / 12 * Math.PI / 2; p.push([I * Math.sin(a), 2 + (D - 2) * (1 - Math.cos(a)), 0]); } return p; } },
+];
+const VIEWS = [
+  { name: "3/4 front", pos: [230, 190, 250], tgt: [0, 28, -25], fov: 30 },
+  { name: "Side", pos: [460, 30, -15], tgt: [0, 28, -15], fov: 22 },
+  { name: "Low rear 3/4", pos: [-250, 70, -330], tgt: [0, 26, -25], fov: 30 },
+];
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(560, 360); renderer.setPixelRatio(2); renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const M = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: .55, metalness: 0 }, o));
+const mats = {
+  body: M(0x34373c, { roughness: .45, metalness: .25 }), plinth: M(0x121315, { roughness: .8 }),
+  frame: M(0x8e939a, { metalness: .6, roughness: .45 }), motor: M(0x3b3f45), term: M(0x2e6b3d), metal: M(0xb9bec4, { metalness: .7, roughness: .35 }),
+  knob: M(0x3a3d42, { roughness: .4 }), line: M(0xf0f0f0), screw: M(0x7d8389, { metalness: .75, roughness: .38 }), cover: M(0x1d2024, { roughness: .6, metalness: .3 }),
+};
+// walnut grain
+const woodC = document.createElement("canvas"); woodC.width = 1024; woodC.height = 512;
+{ const w2 = woodC.getContext("2d"); let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  w2.fillStyle = "#5b3a27"; w2.fillRect(0, 0, 1024, 512);
+  for (let k = 0; k < 260; k++) { let y = rnd() * 512; const dark = rnd() < .7;
+    w2.strokeStyle = dark ? `rgba(28,14,7,${(.08 + rnd() * .3).toFixed(2)})` : `rgba(150,100,62,${(.05 + rnd() * .14).toFixed(2)})`;
+    w2.lineWidth = .4 + rnd() * (dark ? 2.6 : 4); w2.beginPath(); w2.moveTo(-10, y);
+    for (let x = 0; x <= 1040; x += 26) { y += (rnd() - .5) * 2.2 + Math.sin(x / 180 + k) * .5; w2.lineTo(x, y); } w2.stroke(); } }
+const wood = new THREE.CanvasTexture(woodC); wood.encoding = THREE.sRGBEncoding; wood.wrapS = wood.wrapT = THREE.RepeatWrapping; wood.repeat.set(1 / 260, 1 / 130);
+mats.walnut = new THREE.MeshStandardMaterial({ map: wood, roughness: .5 });
+
+function plateTexture() {
+  const PS = 5, c = document.createElement("canvas"); c.width = W * PS; c.height = (Z_FRONT - Z_REAR) * PS; const g = c.getContext("2d");
+  g.fillStyle = "#2b2e33"; g.fillRect(0, 0, c.width, c.height);
+  const X = x => (x + W / 2) * PS, R = z => (z - Z_REAR) * PS;
+  g.fillStyle = "#b9c0c8"; for (let k = 0; k < 7; k++) g.fillRect(X((k - 3) * PITCH) - 1.5, R(C), 3, c.height - R(C));
+  g.fillStyle = "#0e0f11"; for (let i = 0; i < 8; i++) { g.beginPath(); g.roundRect(X((i - 3.5) * PITCH) - 7, R(-33), 14, 330, 7); g.fill(); }
+  const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; return t;
+}
+const roundRectPts = (x0, z0, x1, z1, r, n = 8) => {   // CCW in (x, z) seen from above; returns {p, nrm}
+  const out = [], cs = [[x1 - r, z1 - r, 0], [x0 + r, z1 - r, Math.PI / 2], [x0 + r, z0 + r, Math.PI], [x1 - r, z0 + r, Math.PI * 1.5]];
+  cs.forEach(([cx, cz, a0]) => { for (let k = 0; k <= n; k++) { const a = a0 + k / n * Math.PI / 2; out.push({ x: cx + r * Math.cos(a), z: cz + r * Math.sin(a), nx: Math.cos(a), nz: Math.sin(a) }); } });
+  return out;
+};
+
+// lofted body: top loop = plate outline (tilted), each perimeter point swept down/in along the variant profile
+function buildBody(deck, v) {
+  const g = new THREE.Group(), loop = roundRectPts(-W / 2, Z_REAR, W / 2, Z_FRONT, 7);
+  const tops = loop.map(p => deck.localToWorld(new THREE.Vector3(p.x, 0, p.z)));
+  // footprint: its own rounded rectangle on the desk, inset per side; points pair up by index with the top loop
+  const zF = deck.localToWorld(new THREE.Vector3(0, 0, Z_FRONT)).z, zR = deck.localToWorld(new THREE.Vector3(0, 0, Z_REAR)).z;
+  const foot = roundRectPts(-W / 2 + v.ins.s, zR + v.ins.r, W / 2 - v.ins.s, zF - v.ins.f, 7 + Math.min(v.ins.s, v.ins.f, v.ins.r));
+  const rings = tops.map((t, i) => {
+    const q = foot[i], dx = q.x - t.x, dz = q.z - t.z, I = Math.hypot(dx, dz), ux = I ? dx / I : 0, uz = I ? dz / I : 0, D = t.y - GROUND;
+    return v.prof(I, D).map(([h, d, m]) => ({ x: t.x + ux * h, y: t.y - d, z: t.z + uz * h, m }));
+  });
+  const K = rings[0].length, byMat = {};
+  for (let k = 0; k < K - 1; k++) {
+    const m = rings[0][k + 1].m, arr = byMat[m] = byMat[m] || [];
+    for (let i = 0; i < rings.length; i++) {
+      const a = rings[i], b = rings[(i + 1) % rings.length];
+      [a[k], b[k], b[k + 1], a[k], b[k + 1], a[k + 1]].forEach(p => arr.push(p.x, p.y, p.z));
+    }
+  }
+  Object.entries(byMat).forEach(([m, arr]) => {
+    const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.Float32BufferAttribute(arr, 3)); geo.computeVertexNormals();
+    const mesh = new THREE.Mesh(geo, +m ? mats.plinth : mats.body); mesh.castShadow = true; mesh.material.side = THREE.DoubleSide; g.add(mesh);
+  });
+  // top plate face
+  const sh = new THREE.Shape(); loop.forEach((p, i) => i ? sh.lineTo(p.x, -p.z) : sh.moveTo(p.x, -p.z));
+  const tg = new THREE.ShapeGeometry(sh); tg.rotateX(-Math.PI / 2);
+  const uv = tg.attributes.uv, pos = tg.attributes.position;
+  for (let i = 0; i < uv.count; i++) uv.setXY(i, (pos.getX(i) + W / 2) / W, 1 - (pos.getZ(i) - Z_REAR) / (Z_FRONT - Z_REAR));
+  const top = new THREE.Mesh(tg, new THREE.MeshStandardMaterial({ map: plateTexture(), roughness: .6 })); top.position.y = 0.01; deck.add(top);
+  return g;
+}
+
+async function loadModel(url) {
+  const raw = atob((await (await fetch(url)).json()).b64), u8 = new Uint8Array(raw.length);
+  for (let k = 0; k < raw.length; k++) u8[k] = raw.charCodeAt(k);
+  const buf = u8.buffer, dv = new DataView(buf), hl = dv.getUint32(0, true), head = JSON.parse(new TextDecoder().decode(new Uint8Array(buf, 4, hl)));
+  let off = 4 + hl; const out = {};
+  for (const h of head) {
+    const p16 = new Int16Array(buf, off, h.v * 3); off += h.v * 6; off += (4 - off % 4) % 4;
+    const idx = new Uint32Array(buf, off, h.i); off += h.i * 4;
+    const f = new Float32Array(p16.length); for (let k = 0; k < p16.length; k++) f[k] = p16[k] / 100;
+    const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(f, 3)); geo.setIndex(new THREE.BufferAttribute(idx, 1)); geo.computeVertexNormals(); out[h.mat] = geo;
+  }
+  return out;
+}
+
+function buildScene(v, fg, epdTex) {
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xdfe1e4);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x6a6e74, .75));
+  const key = new THREE.DirectionalLight(0xffffff, .85); key.position.set(120, 380, 160); key.castShadow = true;
+  Object.assign(key.shadow.camera, { left: -200, right: 200, top: 200, bottom: -200, near: 10, far: 900 }); key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 6; key.shadow.bias = -0.0005;
+  scene.add(key);
+  const fill = new THREE.DirectionalLight(0xffffff, .3); fill.position.set(-260, 120, -200); scene.add(fill);
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(2000, 2000), new THREE.ShadowMaterial({ opacity: .32 })); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+
+  const deck = new THREE.Group(); deck.rotation.x = INCL; scene.add(deck);
+  // rest the lowest fader point 2.5 mm above the desk (bottom panel)
+  deck.updateMatrixWorld(true);
+  const rest = [new THREE.Vector3(0, BODY_Y - 24.6, 9.75), new THREE.Vector3(0, BODY_Y - 14.95, 52.75)].map(p => p.applyMatrix4(deck.matrixWorld).y);
+  deck.position.y = 2.5 - Math.min(...rest); deck.updateMatrixWorld(true);
+
+  const pos = [.72, .55, .4, .63, .8, .5, .3, .68];
+  const ks = new THREE.Shape(); ks.moveTo(-10, 0); ks.lineTo(10, 0); ks.lineTo(10, 9); ks.quadraticCurveTo(0, 6.4, -10, 9); ks.closePath();
+  const kg = new THREE.ExtrudeGeometry(ks, { depth: 12, bevelEnabled: true, bevelThickness: .6, bevelSize: .6, bevelSegments: 2 }); kg.translate(0, 0, -6); kg.rotateY(Math.PI / 2);
+  for (let i = 0; i < 8; i++) {
+    const x = (i - 3.5) * PITCH, z = (0.5 - pos[i]) * 60;
+    const k = new THREE.Mesh(kg, mats.knob); k.position.set(x, 2.5, z); k.castShadow = true; deck.add(k);
+    const ln = new THREE.Mesh(new THREE.BoxGeometry(12.6, .5, 1), mats.line); ln.position.set(x, 10.25, z); deck.add(ln);
+    const body = new THREE.Group(); body.rotation.x = Math.PI; body.position.set(x, BODY_Y, 0);
+    Object.entries(fg).forEach(([m, geo]) => { if (m === "stem") { const s = new THREE.Mesh(geo, mats.metal); s.rotation.x = Math.PI; s.position.set(x, BODY_Y, z); deck.add(s); } else body.add(new THREE.Mesh(geo, mats[m] || mats.motor)); });
+    deck.add(body);
+    [-40, 40].forEach(sz => { const s = new THREE.Mesh(new THREE.CylinderGeometry(2.9, 1.5, 1.65, 24), mats.screw); s.position.set(x, -0.8, sz); deck.add(s); });
+  }
+  scene.add(buildBody(deck, v));
+
+  // walnut slab, CrowPanel screwed in from the back (no bracket)
+  const hinge = new THREE.Group(); hinge.position.set(0, 0, C); hinge.rotation.x = B; deck.add(hinge);
+  const slab = new THREE.Mesh(new THREE.BoxGeometry(W, T, DS + 3), [mats.walnut, mats.walnut, mats.walnut, mats.cover, mats.walnut, mats.walnut]);
+  slab.position.set(0, -T / 2, -(DS - 3) / 2); slab.castShadow = true; hinge.add(slab);
+  const win = new THREE.Mesh(new THREE.PlaneGeometry(AA_W + .8, AA_H + .8), M(0x111214)); win.rotation.x = -Math.PI / 2; win.position.set(0, .02, -WINCZ); hinge.add(win);
+  const aa = new THREE.Mesh(new THREE.PlaneGeometry(AA_W, AA_H), new THREE.MeshStandardMaterial({ map: epdTex, color: 0xdcdcdc, roughness: .9 })); aa.rotation.x = -Math.PI / 2; aa.position.set(0, .04, -WINCZ); hinge.add(aa);
+  const ledCols = [0x33dd66, 0x33dd66, null, 0x33dd66, 0x22aa55, 0xff3322, null, 0x33dd66];
+  ledCols.forEach((c, i) => { const d = new THREE.Mesh(new THREE.CircleGeometry(1.25, 20), c ? new THREE.MeshBasicMaterial({ color: c }) : M(0x3a3d42)); d.rotation.x = -Math.PI / 2; d.position.set((i - 3.5) * PITCH, .05, -(WINCZ - AA_H / 2 - .4) / 2); hinge.add(d); });
+  // CrowPanel M2.5 holes (from its STEP), screwed through the back cover
+  [[50, 0], [-50, 0], [79.75, 24.27], [79.75, -24.27], [-79.77, 24.27], [-79.77, -24.27]].forEach(([x, y]) => {
+    const s = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.3, .6, 20), mats.screw); s.position.set(x - .6, -T - .3, -WINCZ - y); hinge.add(s);
+  });
+  return scene;
+}
+
+(async () => {
+  const fg = await loadModel("third_party/fader.json");
+  const epdTex = await new THREE.TextureLoader().loadAsync("epd_sample.png"); epdTex.encoding = THREE.sRGBEncoding; epdTex.anisotropy = 8;
+  const sheet = document.getElementById("sheet");
+  sheet.insertAdjacentHTML("beforeend", `<div></div>` + VIEWS.map(v => `<div class="hd">${v.name}</div>`).join(""));
+  const cam = new THREE.PerspectiveCamera(30, 560 / 360, 5, 4000);
+  for (const v of VARIANTS) {
+    const scene = buildScene(v, fg, epdTex);
+    sheet.insertAdjacentHTML("beforeend", `<div class="lab"><b>${v.id} · ${v.name}</b><span>${v.desc}</span></div>`);
+    for (const vw of VIEWS) {
+      cam.fov = vw.fov; cam.position.set(...vw.pos); cam.lookAt(...vw.tgt); cam.updateProjectionMatrix();
+      renderer.render(scene, cam);
+      const im = new Image(); im.src = renderer.domElement.toDataURL("image/png"); sheet.appendChild(im);
+    }
+  }
+  document.body.dataset.done = "1";
+})();
+</script>
