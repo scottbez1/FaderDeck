@@ -1,57 +1,63 @@
 {
  "d8k": {
+  "version": "1.0",
   "dir": "stl/d8k",
-  "zip": "crowpanel-fader-deck.zip",
+  "zip": "crowpanel-fader-deck-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "crowpanel-fader-deck_base.stl",
+    "file": "crowpanel-fader-deck-v1.0_base.stl",
     "size": [
      181.7,
      117.6,
      42.2
-    ]
+    ],
+    "geom": "f5b070aaa174"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "crowpanel-fader-deck_fader-plate.stl",
+    "file": "crowpanel-fader-deck-v1.0_fader-plate.stl",
     "size": [
      180.4,
      116.2,
      3.3
-    ]
+    ],
+    "geom": "efbe331d8dc3"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "crowpanel-fader-deck_cover.stl",
+    "file": "crowpanel-fader-deck-v1.0_cover.stl",
     "size": [
      182.7,
      118.5,
      3.9
-    ]
+    ],
+    "geom": "554f8d100214"
    },
    {
     "part": "display-front",
     "label": "Display front",
-    "file": "crowpanel-fader-deck_display-front.stl",
+    "file": "crowpanel-fader-deck-v1.0_display-front.stl",
     "size": [
      178.7,
      71.6,
      10.5
-    ]
+    ],
+    "geom": "3767b6d374aa"
    },
    {
     "part": "display-back",
     "label": "Display back",
-    "file": "crowpanel-fader-deck_display-back.stl",
+    "file": "crowpanel-fader-deck-v1.0_display-back.stl",
     "size": [
      175.0,
      50.8,
      1.8
-    ]
+    ],
+    "geom": "9c31857e5012"
    }
   ],
   "hardware": [
@@ -63,41 +69,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: CrowPanel deck, 8 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- crowpanel-fader-deck_base.stl\n- crowpanel-fader-deck_fader-plate.stl\n- crowpanel-fader-deck_cover.stl\n- crowpanel-fader-deck_display-front.stl\n- crowpanel-fader-deck_display-back.stl\n"
+  "license": "FaderDeck v1.0 printable parts: CrowPanel deck, 8 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- crowpanel-fader-deck-v1.0_base.stl\n- crowpanel-fader-deck-v1.0_fader-plate.stl\n- crowpanel-fader-deck-v1.0_cover.stl\n- crowpanel-fader-deck-v1.0_display-front.stl\n- crowpanel-fader-deck-v1.0_display-back.stl\n"
  },
  "s2k": {
+  "version": "1.0",
   "dir": "stl/s2k",
-  "zip": "fader-deck-2f-keys.zip",
+  "zip": "fader-deck-2f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-2f-keys_base.stl",
+    "file": "fader-deck-2f-keys-v1.0_base.stl",
     "size": [
      70.8,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "5f87e4570f96"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-2f-keys_fader-plate.stl",
+    "file": "fader-deck-2f-keys-v1.0_fader-plate.stl",
     "size": [
      69.5,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "0381df7d3077"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-2f-keys_cover.stl",
+    "file": "fader-deck-2f-keys-v1.0_cover.stl",
     "size": [
      71.8,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "ef6f068d7ab3"
    }
   ],
   "hardware": [
@@ -107,41 +117,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 2 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-2f-keys_base.stl\n- fader-deck-2f-keys_fader-plate.stl\n- fader-deck-2f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 2 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-2f-keys-v1.0_base.stl\n- fader-deck-2f-keys-v1.0_fader-plate.stl\n- fader-deck-2f-keys-v1.0_cover.stl\n"
  },
  "s2": {
+  "version": "1.0",
   "dir": "stl/s2",
-  "zip": "fader-deck-2f.zip",
+  "zip": "fader-deck-2f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-2f_base.stl",
+    "file": "fader-deck-2f-v1.0_base.stl",
     "size": [
      66.8,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "26e0c4e28c73"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-2f_fader-plate.stl",
+    "file": "fader-deck-2f-v1.0_fader-plate.stl",
     "size": [
      65.6,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "badb0d52ceb9"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-2f_cover.stl",
+    "file": "fader-deck-2f-v1.0_cover.stl",
     "size": [
      67.8,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "1801781285fc"
    }
   ],
   "hardware": [
@@ -150,41 +164,45 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 2 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-2f_base.stl\n- fader-deck-2f_fader-plate.stl\n- fader-deck-2f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 2 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-2f-v1.0_base.stl\n- fader-deck-2f-v1.0_fader-plate.stl\n- fader-deck-2f-v1.0_cover.stl\n"
  },
  "s3k": {
+  "version": "1.0",
   "dir": "stl/s3k",
-  "zip": "fader-deck-3f-keys.zip",
+  "zip": "fader-deck-3f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-3f-keys_base.stl",
+    "file": "fader-deck-3f-keys-v1.0_base.stl",
     "size": [
      88.6,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "965b9e3c2dc7"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-3f-keys_fader-plate.stl",
+    "file": "fader-deck-3f-keys-v1.0_fader-plate.stl",
     "size": [
      87.3,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "161ac26bd366"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-3f-keys_cover.stl",
+    "file": "fader-deck-3f-keys-v1.0_cover.stl",
     "size": [
      89.6,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "f708e201c322"
    }
   ],
   "hardware": [
@@ -194,41 +212,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 3 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-3f-keys_base.stl\n- fader-deck-3f-keys_fader-plate.stl\n- fader-deck-3f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 3 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-3f-keys-v1.0_base.stl\n- fader-deck-3f-keys-v1.0_fader-plate.stl\n- fader-deck-3f-keys-v1.0_cover.stl\n"
  },
  "s3": {
+  "version": "1.0",
   "dir": "stl/s3",
-  "zip": "fader-deck-3f.zip",
+  "zip": "fader-deck-3f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-3f_base.stl",
+    "file": "fader-deck-3f-v1.0_base.stl",
     "size": [
      84.7,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "6cd1a6ccee81"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-3f_fader-plate.stl",
+    "file": "fader-deck-3f-v1.0_fader-plate.stl",
     "size": [
      83.4,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "c3d02e22fd1e"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-3f_cover.stl",
+    "file": "fader-deck-3f-v1.0_cover.stl",
     "size": [
      85.7,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "4cec8d0dd9a8"
    }
   ],
   "hardware": [
@@ -237,41 +259,45 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 3 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-3f_base.stl\n- fader-deck-3f_fader-plate.stl\n- fader-deck-3f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 3 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-3f-v1.0_base.stl\n- fader-deck-3f-v1.0_fader-plate.stl\n- fader-deck-3f-v1.0_cover.stl\n"
  },
  "s4k": {
+  "version": "1.0",
   "dir": "stl/s4k",
-  "zip": "fader-deck-4f-keys.zip",
+  "zip": "fader-deck-4f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-4f-keys_base.stl",
+    "file": "fader-deck-4f-keys-v1.0_base.stl",
     "size": [
      106.5,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "0a6dd6cd8639"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-4f-keys_fader-plate.stl",
+    "file": "fader-deck-4f-keys-v1.0_fader-plate.stl",
     "size": [
      105.2,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "5560c875a3e6"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-4f-keys_cover.stl",
+    "file": "fader-deck-4f-keys-v1.0_cover.stl",
     "size": [
      107.5,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "35e3e4d2b519"
    }
   ],
   "hardware": [
@@ -281,41 +307,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 4 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-4f-keys_base.stl\n- fader-deck-4f-keys_fader-plate.stl\n- fader-deck-4f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 4 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-4f-keys-v1.0_base.stl\n- fader-deck-4f-keys-v1.0_fader-plate.stl\n- fader-deck-4f-keys-v1.0_cover.stl\n"
  },
  "s4": {
+  "version": "1.0",
   "dir": "stl/s4",
-  "zip": "fader-deck-4f.zip",
+  "zip": "fader-deck-4f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-4f_base.stl",
+    "file": "fader-deck-4f-v1.0_base.stl",
     "size": [
      102.6,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "826e762ae41c"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-4f_fader-plate.stl",
+    "file": "fader-deck-4f-v1.0_fader-plate.stl",
     "size": [
      101.2,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "f3beba5b2a4e"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-4f_cover.stl",
+    "file": "fader-deck-4f-v1.0_cover.stl",
     "size": [
      103.6,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "3b1405fe7f85"
    }
   ],
   "hardware": [
@@ -324,41 +354,45 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 4 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-4f_base.stl\n- fader-deck-4f_fader-plate.stl\n- fader-deck-4f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 4 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-4f-v1.0_base.stl\n- fader-deck-4f-v1.0_fader-plate.stl\n- fader-deck-4f-v1.0_cover.stl\n"
  },
  "s5k": {
+  "version": "1.0",
   "dir": "stl/s5k",
-  "zip": "fader-deck-5f-keys.zip",
+  "zip": "fader-deck-5f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-5f-keys_base.stl",
+    "file": "fader-deck-5f-keys-v1.0_base.stl",
     "size": [
      124.3,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "2db151dead2f"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-5f-keys_fader-plate.stl",
+    "file": "fader-deck-5f-keys-v1.0_fader-plate.stl",
     "size": [
      123.0,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "ef91b769761c"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-5f-keys_cover.stl",
+    "file": "fader-deck-5f-keys-v1.0_cover.stl",
     "size": [
      125.3,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "7c1b37caf2d8"
    }
   ],
   "hardware": [
@@ -368,41 +402,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 5 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-5f-keys_base.stl\n- fader-deck-5f-keys_fader-plate.stl\n- fader-deck-5f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 5 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-5f-keys-v1.0_base.stl\n- fader-deck-5f-keys-v1.0_fader-plate.stl\n- fader-deck-5f-keys-v1.0_cover.stl\n"
  },
  "s5": {
+  "version": "1.0",
   "dir": "stl/s5",
-  "zip": "fader-deck-5f.zip",
+  "zip": "fader-deck-5f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-5f_base.stl",
+    "file": "fader-deck-5f-v1.0_base.stl",
     "size": [
      120.4,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "a97426822fb2"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-5f_fader-plate.stl",
+    "file": "fader-deck-5f-v1.0_fader-plate.stl",
     "size": [
      119.1,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "886f41518ea9"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-5f_cover.stl",
+    "file": "fader-deck-5f-v1.0_cover.stl",
     "size": [
      121.4,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "59e4f0233ddc"
    }
   ],
   "hardware": [
@@ -411,41 +449,45 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 5 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-5f_base.stl\n- fader-deck-5f_fader-plate.stl\n- fader-deck-5f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 5 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-5f-v1.0_base.stl\n- fader-deck-5f-v1.0_fader-plate.stl\n- fader-deck-5f-v1.0_cover.stl\n"
  },
  "s6k": {
+  "version": "1.0",
   "dir": "stl/s6k",
-  "zip": "fader-deck-6f-keys.zip",
+  "zip": "fader-deck-6f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-6f-keys_base.stl",
+    "file": "fader-deck-6f-keys-v1.0_base.stl",
     "size": [
      142.2,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "88f8c8c59986"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-6f-keys_fader-plate.stl",
+    "file": "fader-deck-6f-keys-v1.0_fader-plate.stl",
     "size": [
      140.9,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "6e9412efa849"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-6f-keys_cover.stl",
+    "file": "fader-deck-6f-keys-v1.0_cover.stl",
     "size": [
      143.2,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "f9ad1229b8c2"
    }
   ],
   "hardware": [
@@ -455,41 +497,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 6 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-6f-keys_base.stl\n- fader-deck-6f-keys_fader-plate.stl\n- fader-deck-6f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 6 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-6f-keys-v1.0_base.stl\n- fader-deck-6f-keys-v1.0_fader-plate.stl\n- fader-deck-6f-keys-v1.0_cover.stl\n"
  },
  "s6": {
+  "version": "1.0",
   "dir": "stl/s6",
-  "zip": "fader-deck-6f.zip",
+  "zip": "fader-deck-6f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-6f_base.stl",
+    "file": "fader-deck-6f-v1.0_base.stl",
     "size": [
      138.2,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "2274a6806916"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-6f_fader-plate.stl",
+    "file": "fader-deck-6f-v1.0_fader-plate.stl",
     "size": [
      136.9,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "3724f56e12f7"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-6f_cover.stl",
+    "file": "fader-deck-6f-v1.0_cover.stl",
     "size": [
      139.2,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "40728698fb47"
    }
   ],
   "hardware": [
@@ -498,41 +544,45 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 6 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-6f_base.stl\n- fader-deck-6f_fader-plate.stl\n- fader-deck-6f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 6 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-6f-v1.0_base.stl\n- fader-deck-6f-v1.0_fader-plate.stl\n- fader-deck-6f-v1.0_cover.stl\n"
  },
  "s7k": {
+  "version": "1.0",
   "dir": "stl/s7k",
-  "zip": "fader-deck-7f-keys.zip",
+  "zip": "fader-deck-7f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-7f-keys_base.stl",
+    "file": "fader-deck-7f-keys-v1.0_base.stl",
     "size": [
      160.0,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "ca55e9366db7"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-7f-keys_fader-plate.stl",
+    "file": "fader-deck-7f-keys-v1.0_fader-plate.stl",
     "size": [
      158.7,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "aa52df3a4d18"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-7f-keys_cover.stl",
+    "file": "fader-deck-7f-keys-v1.0_cover.stl",
     "size": [
      161.0,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "71bd7bd977a0"
    }
   ],
   "hardware": [
@@ -542,41 +592,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 7 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-7f-keys_base.stl\n- fader-deck-7f-keys_fader-plate.stl\n- fader-deck-7f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 7 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-7f-keys-v1.0_base.stl\n- fader-deck-7f-keys-v1.0_fader-plate.stl\n- fader-deck-7f-keys-v1.0_cover.stl\n"
  },
  "s7": {
+  "version": "1.0",
   "dir": "stl/s7",
-  "zip": "fader-deck-7f.zip",
+  "zip": "fader-deck-7f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-7f_base.stl",
+    "file": "fader-deck-7f-v1.0_base.stl",
     "size": [
      156.1,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "1c98295c7b26"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-7f_fader-plate.stl",
+    "file": "fader-deck-7f-v1.0_fader-plate.stl",
     "size": [
      154.8,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "efb722213e96"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-7f_cover.stl",
+    "file": "fader-deck-7f-v1.0_cover.stl",
     "size": [
      157.1,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "032b3b1ce24b"
    }
   ],
   "hardware": [
@@ -585,41 +639,45 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 7 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-7f_base.stl\n- fader-deck-7f_fader-plate.stl\n- fader-deck-7f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 7 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-7f-v1.0_base.stl\n- fader-deck-7f-v1.0_fader-plate.stl\n- fader-deck-7f-v1.0_cover.stl\n"
  },
  "s8k": {
+  "version": "1.0",
   "dir": "stl/s8k",
-  "zip": "fader-deck-8f-keys.zip",
+  "zip": "fader-deck-8f-keys-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-8f-keys_base.stl",
+    "file": "fader-deck-8f-keys-v1.0_base.stl",
     "size": [
      177.9,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "3462be928ae9"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-8f-keys_fader-plate.stl",
+    "file": "fader-deck-8f-keys-v1.0_fader-plate.stl",
     "size": [
      176.6,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "314a700c8fbe"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-8f-keys_cover.stl",
+    "file": "fader-deck-8f-keys-v1.0_cover.stl",
     "size": [
      178.9,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "e1480f5d2ee5"
    }
   ],
   "hardware": [
@@ -629,41 +687,45 @@
    "4 \u00d7 Kailh Choc v1 switches",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 8 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-8f-keys_base.stl\n- fader-deck-8f-keys_fader-plate.stl\n- fader-deck-8f-keys_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 8 faders, 4 keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-8f-keys-v1.0_base.stl\n- fader-deck-8f-keys-v1.0_fader-plate.stl\n- fader-deck-8f-keys-v1.0_cover.stl\n"
  },
  "s8": {
+  "version": "1.0",
   "dir": "stl/s8",
-  "zip": "fader-deck-8f.zip",
+  "zip": "fader-deck-8f-v1.0.zip",
   "parts": [
    {
     "part": "base",
     "label": "Base",
-    "file": "fader-deck-8f_base.stl",
+    "file": "fader-deck-8f-v1.0_base.stl",
     "size": [
      173.9,
      117.1,
      43.3
-    ]
+    ],
+    "geom": "92cc62ada9e6"
    },
    {
     "part": "fader-plate",
     "label": "Fader plate",
-    "file": "fader-deck-8f_fader-plate.stl",
+    "file": "fader-deck-8f-v1.0_fader-plate.stl",
     "size": [
      172.6,
      114.9,
      2.0
-    ]
+    ],
+    "geom": "be91f22d3dce"
    },
    {
     "part": "cover",
     "label": "Cover",
-    "file": "fader-deck-8f_cover.stl",
+    "file": "fader-deck-8f-v1.0_cover.stl",
     "size": [
      174.9,
      117.2,
      3.9
-    ]
+    ],
+    "geom": "1dcdb10d42fb"
    }
   ],
   "hardware": [
@@ -672,6 +734,6 @@
    "4 \u00d7 M3 heat-set inserts (in the base)",
    "4 \u00d7 \u00d88 \u00d7 1.5 mm rubber pads"
   ],
-  "license": "FaderDeck printable parts: screen-less deck, 8 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-8f_base.stl\n- fader-deck-8f_fader-plate.stl\n- fader-deck-8f_cover.stl\n"
+  "license": "FaderDeck v1.0 printable parts: screen-less deck, 8 faders, no keys (mm, in print orientation)\n\nFrom the FaderBuddy open-source project: https://github.com/scottbez1/FaderBuddy\n\nThese files are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):\nhttps://creativecommons.org/licenses/by-sa/4.0/\n\nYou may share and adapt them, including commercially, as long as you\n- give credit: \"FaderDeck, from the FaderBuddy open-source project (github.com/scottbez1/FaderBuddy)\", link the license, and say whether you changed anything;\n- release anything you make from them under the same license, CC BY-SA 4.0.\n\nFiles:\n- fader-deck-8f-v1.0_base.stl\n- fader-deck-8f-v1.0_fader-plate.stl\n- fader-deck-8f-v1.0_cover.stl\n"
  }
 }

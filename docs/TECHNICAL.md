@@ -30,6 +30,9 @@ Every base has a 4 mm cable notch at the bottom of its back wall.
 | `sN` screen-less, N faders | base, fader plate, cover | 66.8 + 17.85 × (N − 2) mm |
 | `sNk` screen-less, N faders and keys | base, fader plate, cover | 70.8 + 17.85 × (N − 2) mm |
 
+Files are named for the variant and the design version, e.g. `fader-deck-4f-keys-v1.0_base.stl` (see
+[Versions](#versions)).
+
 Print orientation: base top face down, fader plate bottom face down, cover visible face down, display front face down, display
 back outer face down; nothing needs supports. Each variant's sizes and hardware are in `sim/print/variants.json`.
 
@@ -90,6 +93,14 @@ python3 tools/gate.py   # fail if the checks found anything unexpected
 Expected contacts on a clean run, CrowPanel deck only: the CrowPanel passing the snap bumps on its way into the display front, and
 the outer two FaderBuddy boards' rear corners on the plate's way in (a modelling difference: the real build goes together fine).
 The screen-less decks check clean.
+
+## Versions
+
+[`VERSION`](../VERSION) holds the design version; [`CHANGELOG.md`](../CHANGELOG.md) says what changed in each. `tools/export.py`
+puts it in every STL and zip name, each STL's header, each `LICENSE.txt` and `sim/print/variants.json`, and the page shows it
+with the print files, along with the commit the published site was built from. It covers every variant, so any change to a
+printed part means a new version. The export records a hash of each part's triangles and warns when one changes while
+`VERSION` stays the same.
 
 ## The published site
 

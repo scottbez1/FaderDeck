@@ -6,6 +6,10 @@ cd "$(dirname "$0")/.."
 rm -rf _site && mkdir -p _site/print _site/stl
 mkdir -p _site/third_party
 cp sim/index.html sim/knob.json _site/
+# the build the page says it is: the commit it was built from
+sha=$(git rev-parse --short=7 HEAD 2>/dev/null || echo dev)
+sed -i "s/const BUILD = \"dev\"/const BUILD = \"$sha\"/" _site/index.html
+grep -q "const BUILD = \"$sha\"" _site/index.html
 cp sim/third_party/*.json sim/third_party/README.md _site/third_party/
 cp sim/print/*.json _site/print/
 for d in stl/*/; do v=$(basename "$d"); mkdir -p "_site/stl/$v"; cp "$d"*.stl "$d"*.zip "_site/stl/$v/"; done
